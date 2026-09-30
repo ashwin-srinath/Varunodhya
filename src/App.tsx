@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import useScrollReveal from './hooks/useScrollReveal';
 import usePremiumInteractions from './hooks/usePremiumInteractions';
+
 export default function App() {
   useScrollReveal();
   usePremiumInteractions();
@@ -24,40 +25,6 @@ export default function App() {
         <Training />
         <Projects />
         <Careers />
-        <Contact />
-      </main>
-
-      <Footer />
-    </>
-  );
-}
-export default function App() {
-  useScrollReveal();
-
-  return (
-    <>
-      <Navbar />
-
-      <main>
-        {/* PAGE 1 — HERO */}
-        <Hero />
-
-        {/* PAGE 2 — WHAT WE DO */}
-        <Services />
-
-        {/* PAGE 3 — ABOUT */}
-        <About />
-
-        {/* PAGE 4 — TRAINING */}
-        <Training />
-
-        {/* PAGE 5 — PROJECTS */}
-        <Projects />
-
-        {/* PAGE 6 — CAREERS */}
-        <Careers />
-
-        {/* PAGE 7 — CONTACT */}
         <Contact />
       </main>
 
