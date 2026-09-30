@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VARUNA Consultancy Services LLP — Expertise Beneath the Surface</title>
+<meta name="description" content="Specialized consultancy, technical expertise, professional training and interdisciplinary solutions for scientific, engineering, environmental and defence-related projects.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=Inter:wght@300;400;500&display=swap">
+<style>
+:root{
+  --bg:#05080d; --bg2:#0a1018; --panel:#0d141d; --line:#1b2733;
+  --ink:#e8eef4; --mut:#8b9bab; --cy:#4fd1e0; --blue:#2c6e8f;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:300;letter-spacing:-.02em;line-height:1.1;margin:0}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1180px,92vw);margin:0 auto}
+section{padding:110px 0;position:relative}
+.eyebrow{font:500 11px/1 Inter;letter-spacing:.22em;text-transform:uppercase;color:var(--cy);margin-bottom:22px}
+.lead{color:var(--mut);max-width:62ch;font-weight:300}
+/* nav */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(5,8,13,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{font-family:Fraunces,serif;font-size:20px;letter-spacing:.34em;font-weight:500}
+.brand span{display:block;font:400 8px/1 Inter;letter-spacing:.26em;color:var(--mut);margin-top:4px}
+.links{display:flex;gap:30px;align-items:center}
+.links a{font-size:13.5px;color:var(--mut);transition:color .25s}
+.links a:hover,.links a:focus-visible{color:var(--ink)}
+.btn{display:inline-block;padding:12px 24px;border-radius:2px;font-size:13.5px;letter-spacing:.04em;cursor:pointer;border:1px solid var(--cy);color:var(--cy);background:transparent;transition:background .3s,color .3s}
+.btn:hover,.btn:focus-visible{background:var(--cy);color:#04121a}
+.btn.solid{background:var(--cy);color:#04121a}
+.btn.solid:hover{background:transparent;color:var(--cy)}
+.btn.ghost{border-color:var(--line);color:var(--ink)}
+.btn.ghost:hover{border-color:var(--cy);background:transparent;color:var(--cy)}
+.burger{display:none;background:none;border:0;color:var(--ink);padding:10px;cursor:pointer}
+.burger svg{display:block}
+/* hero */
+.hero{min-height:88vh;display:flex;align-items:center;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(90% 70% at 72% 18%,rgba(44,110,143,.30),transparent 62%),
+  radial-gradient(60% 50% at 8% 88%,rgba(79,209,224,.10),transparent 70%),
+  linear-gradient(180deg,#060a10,#05080d)}
+.beams{position:absolute;inset:0;opacity:.30;background:repeating-linear-gradient(104deg,transparent 0 58px,rgba(120,200,220,.07) 58px 62px,transparent 62px 130px);animation:drift 26s linear infinite}
+@keyframes drift{to{transform:translateX(-130px)}}
+.sonar{position:absolute;right:-8%;top:50%;translate:0 -50%;width:min(620px,78vw);aspect-ratio:1;pointer-events:none}
+.sonar i{position:absolute;inset:0;margin:auto;width:100%;height:100%;border:1px solid rgba(79,209,224,.22);border-radius:50%;animation:ping 6s ease-out infinite;opacity:0}
+.sonar i:nth-child(2){animation-delay:2s}.sonar i:nth-child(3){animation-delay:4s}
+@keyframes ping{0%{transform:scale(.12);opacity:.85}100%{transform:scale(1);opacity:0}}
+.hero .wrap{position:relative;z-index:2;padding:120px 0}
+h1{font-size:clamp(2.4rem,6vw,4.4rem);max-width:17ch;margin:26px 0 24px}
+.mark{font-family:Fraunces,serif;font-size:clamp(2rem,5vw,3rem);letter-spacing:.4em}
+.mark small{display:block;font:400 11px/1 Inter;letter-spacing:.3em;color:var(--mut);margin-top:10px}
+.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px}
+/* grids */
+.grid{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:54px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.cell{background:var(--bg);padding:38px 30px;transition:background .35s}
+.cell:hover{background:var(--panel)}
+.num{font-family:Fraunces,serif;color:var(--blue);font-size:13px;letter-spacing:.2em}
+.cell h3{font-size:1.35rem;margin:16px 0 14px}
+.cell p{color:var(--mut);font-size:14.5px;font-weight:300}
+.more{display:inline-block;margin-top:22px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--cy);border-bottom:1px solid transparent;transition:border-color .3s}
+.cell:hover .more{border-color:var(--cy)}
+.ico{width:26px;height:26px;stroke:var(--cy);fill:none;stroke-width:1.2}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.vals{list-style:none;padding:0;margin:34px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.vals li{font-size:14.5px;color:var(--mut);padding-left:18px;position:relative}
+.vals li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border:1px solid var(--cy);rotate:45deg}
+.alt{background:var(--bg2)}
+.exp{display:flex;flex-wrap:wrap;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:50px}
+.exp span{background:var(--bg);padding:26px 30px;flex:1 1 280px;font-size:14.5px;color:var(--mut);transition:color .3s,background .3s}
+.exp span:hover{color:var(--ink);background:var(--panel)}
+.tag{display:inline-block;font:500 10px/1 Inter;letter-spacing:.16em;text-transform:uppercase;color:var(--cy);border:1px solid rgba(79,209,224,.35);padding:5px 9px;margin-left:10px;vertical-align:middle}
+.note{margin-top:46px;border:1px dashed var(--line);padding:44px;text-align:center;color:var(--mut);font-weight:300}
+/* form */
+form{margin-top:44px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.f{display:flex;flex-direction:column;gap:8px}
+.f.full{grid-column:1/-1}
+label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+input,select,textarea{background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:13px 14px;font:300 15px Inter;border-radius:2px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--cy);outline-offset:1px;border-color:transparent}
+textarea{resize:vertical;min-height:130px}
+.err{color:#ff8b8b;font-size:12.5px;min-height:1em}
+#status{grid-column:1/-1;font-size:14px;color:var(--cy)}
+.meta{display:grid;gap:22px;margin-top:40px}
+.meta div{border-top:1px solid var(--line);padding-top:14px}
+.meta b{display:block;font:500 11px/1 Inter;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);margin-bottom:8px}
+footer{border-top:1px solid var(--line);padding:70px 0 40px;background:#04070b}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:50px}
+footer a{color:var(--mut);font-size:14px;display:block;margin-bottom:10px;transition:color .25s}
+footer a:hover{color:var(--cy)}
+.copy{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:#5d6b79;font-size:12.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+.rev.in{opacity:1;transform:none}
+:focus-visible{outline:2px solid var(--cy);outline-offset:3px}
+@media(max-width:900px){
+  .links{position:fixed;inset:calc(72px + env(safe-area-inset-top,0px)) 0 auto 0;flex-direction:column;align-items:flex-start;gap:0;background:#070c12;border-bottom:1px solid var(--line);padding:10px 4vw 26px;transform:translateY(-130%);transition:transform .4s ease;visibility:hidden}
+  .links.open{transform:none;visibility:visible}
+  .links a{padding:14px 0;font-size:16px;width:100%;border-bottom:1px solid var(--line)}
+  .links .btn{margin-top:18px;border-bottom:1px solid var(--cy)}
+  .burger{display:block}
+  .g3,.g4,.split,.fgrid,form,.vals{grid-template-columns:1fr}
+  section{padding:76px 0}
+  .sonar{opacity:.5}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rev{opacity:1;transform:none}html{scroll-behavior:auto}}
+:root:not([data-theme="light"]){color-scheme:dark}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="#home" class="brand">VARUNA<span>CONSULTANCY SERVICES LLP</span></a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" fill="none"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="links" id="menu">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a>
+      <a href="#expertise">Expertise</a><a href="#training">Training</a><a href="#careers">Careers</a>
+      <a href="#contact">Contact</a><a href="#contact" class="btn solid">Get in Touch</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="beams" aria-hidden="true"></div>
+  <div class="sonar" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <div class="mark rev">VARUNA<small>CONSULTANCY SERVICES LLP</small></div>
+    <h1 class="rev">Expertise Beneath the Surface. Possibilities Beyond Boundaries.</h1>
+    <p class="lead rev">Specialized consultancy, technical expertise, professional training, and interdisciplinary solutions for a complex and evolving world.</p>
+    <div class="cta rev"><a href="#services" class="btn solid">Explore Our Services</a><a href="#contact" class="btn ghost">Get in Touch</a></div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <p class="eyebrow rev">What We Do</p>
+    <h2 class="rev" style="font-size:clamp(1.9rem,4vw,3rem);max-width:20ch">Three disciplines, one standard of rigour.</h2>
+    <div class="grid g3">
+      <article class="cell rev">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M6 11v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+        <p class="num" style="margin-top:20px">01</p><h3>Professional Training</h3>
+        <p>Specialized training in underwater surveillance, detection, tracking, classification, surveillance systems, and SONAR/RADAR signal-processing algorithms.</p>
+        <a class="more" href="#training">Learn more</a>
+      </article>
+      <article class="cell rev">
+        <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
+        <p class="num" style="margin-top:20px">02</p><h3>Consultancy Services</h3>
+        <p>Technical consultancy, project advisory, research support, technology assessment, and interdisciplinary project assistance.</p>
+        <a class="more" href="#contact">Learn more</a>
+      </article>
+      <article class="cell rev">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M16 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="3.2"/><path d="M18 9v6M15 12h6"/></svg>
+        <p class="num" style="margin-top:20px">03</p><h3>Expert Talent &amp; Capacity Building</h3>
+        <p>Specialist manpower recruitment, professional training, knowledge transfer, and expert-led capacity-building programs delivered by highly qualified professionals.</p>
+        <a class="more" href="#careers">Learn more</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="about">
+  <div class="wrap split">
+    <div class="rev">
+      <p class="eyebrow">About Varuna</p>
+      <h2 style="font-size:clamp(1.9rem,4vw,3rem)">Knowledge. Precision. Possibility.</h2>
+    </div>
+    <div class="rev">
+      <p class="lead">Varuna Consultancy Services LLP is a knowledge-driven consultancy connecting experienced professionals, emerging technologies, and practical project requirements. We work across scientific, engineering, environmental, and defence-related domains — bringing specialist understanding to problems that rarely sit within a single discipline.</p>
+      <p class="lead" style="margin-top:18px">Our approach is deliberately interdisciplinary: technical depth where it matters, clear documentation, and transfer of knowledge that outlasts the engagement.</p>
+      <ul class="vals">
+        <li>Technical Excellence</li><li>Professional Integrity</li>
+        <li>Interdisciplinary Collaboration</li><li>Knowledge Transfer</li>
+        <li>Innovation</li><li>Reliable Project Support</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="expertise">
+  <div class="wrap">
+    <p class="eyebrow rev">Areas of Expertise</p>
+    <h2 class="rev" style="font-size:clamp(1.9rem,4vw,3rem);max-width:18ch">Depth across domains that intersect.</h2>
+    <div class="exp rev">
+      <span>Underwater and marine technologies</span><span>Defence technologies</span>
+      <span>Scientific and engineering systems</span><span>Geospatial and environmental studies</span>
+      <span>Research and technology development</span><span>Technical documentation and assessment</span>
+      <span>Professional education and training</span><span>Interdisciplinary project support</span>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="training">
+  <div class="wrap split">
+    <div class="rev">
+      <p class="eyebrow">Training</p>
+      <h2 style="font-size:clamp(1.9rem,4vw,3rem)">Expert-led programs, shaped to your requirement.</h2>
+      <p class="lead" style="margin-top:22px">Training programs are customized according to client requirements — scope, depth, and delivery format are agreed before each engagement.</p>
+    </div>
+    <div class="grid" style="margin-top:0;grid-template-columns:1fr">
+      <div class="cell rev"><h3 style="font-size:1.05rem;margin:0">Underwater surveillance <span class="tag">On request</span></h3></div>
+      <div class="cell rev"><h3 style="font-size:1.05rem;margin:0">Detection, tracking &amp; classification <span class="tag">On request</span></h3></div>
+      <div class="cell rev"><h3 style="font-size:1.05rem;margin:0">SONAR / RADAR signal processing <span class="tag">On request</span></h3></div>
+      <div class="cell rev"><h3 style="font-size:1.05rem;margin:0">Surveillance-system concepts <span class="tag">Planned</span></h3></div>
+      <div class="cell rev"><h3 style="font-size:1.05rem;margin:0">Technical knowledge transfer <span class="tag">On request</span></h3></div>
+      <div class="cell rev"><h3 style="font-size:1.05rem;margin:0">Expert-led workshops &amp; specialist development <span class="tag">Planned</span></h3></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <p class="eyebrow rev">Projects &amp; Capabilities</p>
+    <h2 class="rev" style="font-size:clamp(1.9rem,4vw,3rem);max-width:20ch">A record in the making.</h2>
+    <div class="note rev">Selected projects and case studies will be presented here as our work develops.</div>
+  </div>
+</section>
+
+<section class="alt" id="careers">
+  <div class="wrap split">
+    <div class="rev">
+      <p class="eyebrow">Careers &amp; Collaboration</p>
+      <h2 style="font-size:clamp(1.9rem,4vw,3rem)">For specialists who go deeper.</h2>
+    </div>
+    <div class="rev">
+      <p class="lead">We work with technical professionals, expert consultants, and academic collaborators across our areas of practice. If your expertise sits in these domains — or you are interested in training and collaboration opportunities — we would welcome a conversation.</p>
+      <ul class="vals"><li>Specialist recruitment</li><li>Technical professionals</li><li>Expert consultants</li><li>Training opportunities</li><li>Research collaboration</li><li>Associate engagements</li></ul>
+      <p style="margin-top:32px"><a href="#contact" class="btn">Express Interest</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap split">
+    <div class="rev">
+      <p class="eyebrow">Contact</p>
+      <h2 style="font-size:clamp(1.9rem,4vw,3rem)">Let's discuss how specialized knowledge and interdisciplinary expertise can support your next project.</h2>
+      <div class="meta">
+        <div><b>Email</b>[ business email — to be added ]</div>
+        <div><b>Telephone</b>[ telephone number — to be added ]</div>
+        <div><b>Registered Address</b>[ business address — to be added ]</div>
+      </div>
+    </div>
+    <div class="rev">
+      <form id="cf" novalidate>
+        <div class="f full"><label for="n">Name</label><input id="n" name="name" autocomplete="name"><p class="err" data-for="n"></p></div>
+        <div class="f"><label for="e">Email</label><input id="e" type="email" name="email" autocomplete="email"><p class="err" data-for="e"></p></div>
+        <div class="f"><label for="o">Organization</label><input id="o" name="org" autocomplete="organization"><p class="err" data-for="o"></p></div>
+        <div class="f full"><label for="s">Area of interest</label>
+          <select id="s" name="interest">
+            <option value="">Select an area</option>
+            <option>Professional Training</option><option>Consultancy Services</option>
+            <option>Expert Talent &amp; Capacity Building</option><option>Collaboration / Careers</option><option>Other</option>
+          </select><p class="err" data-for="s"></p></div>
+        <div class="f full"><label for="m">Message</label><textarea id="m" name="message"></textarea><p class="err" data-for="m"></p></div>
+        <div class="f full"><button class="btn solid" type="submit" style="justify-self:start">Send Enquiry</button></div>
+        <p id="status" role="status" aria-live="polite"></p>
+      </form>
+      <p style="color:#5d6b79;font-size:12.5px;margin-top:18px">This form validates input in the browser only. No backend is connected yet, so nothing is transmitted or stored — email integration can be added later without changing the markup.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="brand" style="font-size:18px">VARUNA<span>CONSULTANCY SERVICES LLP</span></div>
+        <p class="lead" style="margin-top:20px;font-size:14px;max-width:40ch">A multidisciplinary consultancy supporting complex scientific, engineering, environmental, and defence-related projects.</p>
+      </div>
+      <div><b style="font:500 11px/1 Inter;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);display:block;margin-bottom:16px">Navigate</b>
+        <a href="#about">About</a><a href="#services">Services</a><a href="#expertise">Expertise</a><a href="#training">Training</a><a href="#careers">Careers</a></div>
+      <div><b style="font:500 11px/1 Inter;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);display:block;margin-bottom:16px">Contact</b>
+        <a href="#contact">[ business email ]</a><a href="#contact">[ telephone ]</a><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></div>
+    </div>
+    <div class="copy"><span>© <span id="yr"></span> Varuna Consultancy Services LLP. All rights reserved.</span><span>Expertise Beneath the Surface.</span></div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+var b=document.getElementById('burger'),m=document.getElementById('menu');
+b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu')});
+m.addEventListener('click',function(e){if(e.target.tagName==='A'){m.classList.remove('open');b.setAttribute('aria-expanded','false')}});
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+document.querySelectorAll('.rev').forEach(function(el,i){el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+var f=document.getElementById('cf');
+f.addEventListener('submit',function(ev){
+  ev.preventDefault();
+  var ok=true,st=document.getElementById('status');st.textContent='';
+  function set(id,msg){var p=f.querySelector('[data-for="'+id+'"]');p.textContent=msg||'';var el=document.getElementById(id);el.setAttribute('aria-invalid',msg?'true':'false');if(msg){ok=false;if(ok===false&&!f.dataset.f){el.focus();f.dataset.f=1}}}
+  delete f.dataset.f;
+  set('n',f.name.value.trim()?'':'Please enter your name.');
+  set('e',/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.email.value.trim())?'':'Please enter a valid email address.');
+  set('o','');
+  set('s',f.interest.value?'':'Please select an area of interest.');
+  set('m',f.message.value.trim().length>9?'':'Please add a short message (at least 10 characters).');
+  if(ok){st.textContent='Validation passed. No backend is connected yet, so this enquiry was not sent — connect an email service to deliver it.';}
+});
+</script>
+</body>
+</html>
