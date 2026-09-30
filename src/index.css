@@ -2185,3 +2185,279 @@ body.submarine-cursor-active select {
     animation: none;
   }
 }
+
+
+/* =========================================================
+   EXPERTISE CARDS WITH IMAGES
+   ========================================================= */
+
+.expertise {
+  position: relative;
+  padding: 110px 0;
+  background: var(--bg);
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin-top: 55px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+/* Individual card */
+
+.expertise-card {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  background: #071019;
+  border: 0;
+  transition:
+    background 0.35s ease,
+    transform 0.35s ease;
+}
+
+.expertise-card:hover {
+  background: #0a151f;
+}
+
+/* =========================================================
+   IMAGE AREA
+   ========================================================= */
+
+.expertise-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background: #050b11;
+}
+
+.expertise-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  opacity: 0.82;
+
+  transition:
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.5s ease,
+    filter 0.5s ease;
+}
+
+.expertise-card:hover .expertise-image img {
+  transform: scale(1.06);
+  opacity: 1;
+}
+
+/* Makes the image blend into your existing dark design */
+
+.expertise-image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5, 8, 13, 0.08) 0%,
+      rgba(5, 8, 13, 0.15) 45%,
+      rgba(5, 8, 13, 0.95) 100%
+    );
+
+  pointer-events: none;
+}
+
+/* subtle cyan line at bottom of image */
+
+.expertise-image::after {
+  content: "";
+  position: absolute;
+  left: 25px;
+  right: 25px;
+  bottom: 0;
+
+  height: 1px;
+
+  background: rgba(79, 209, 224, 0.35);
+}
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.expertise-content {
+  position: relative;
+  padding: 22px 27px 32px;
+  min-height: 330px;
+}
+
+/* Number */
+
+.expertise-top {
+  position: absolute;
+  top: -205px;
+  left: 26px;
+  z-index: 3;
+}
+
+.expertise-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 44px;
+  height: 34px;
+
+  padding: 0 10px;
+
+  border: 1px solid rgba(79, 209, 224, 0.35);
+
+  background: rgba(4, 10, 16, 0.7);
+
+  color: var(--cy);
+
+  font:
+    500 10px/1 Inter,
+    sans-serif;
+
+  letter-spacing: 0.15em;
+
+  backdrop-filter: blur(6px);
+}
+
+/* Category */
+
+.expertise-category {
+  margin: 0 0 14px;
+
+  color: var(--cy);
+
+  font:
+    500 9px/1.4 Inter,
+    sans-serif;
+
+  letter-spacing: 0.18em;
+}
+
+/* Title */
+
+.expertise-content h3 {
+  max-width: 17ch;
+
+  margin: 0 0 16px;
+
+  color: var(--ink);
+
+  font:
+    300 1.45rem/1.12 Fraunces,
+    Georgia,
+    serif;
+
+  letter-spacing: -0.025em;
+}
+
+/* Description */
+
+.expertise-description {
+  max-width: 390px;
+
+  margin: 0;
+
+  color: var(--mut);
+
+  font:
+    300 13.5px/1.75 Inter,
+    sans-serif;
+}
+
+/* Explore link */
+
+.expertise-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 25px;
+
+  color: var(--cy);
+
+  font:
+    500 10px/1 Inter,
+    sans-serif;
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  transition:
+    gap 0.3s ease,
+    color 0.3s ease;
+}
+
+.expertise-link span {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.expertise-link:hover {
+  gap: 15px;
+  color: #8aeaf1;
+}
+
+/* =========================================================
+   SECOND ROW
+   ========================================================= */
+
+/*
+   Keep the original 3-column arrangement.
+   Cards 04 and 05 remain on the left,
+   exactly like your screenshot.
+*/
+
+.expertise-card:nth-child(4) {
+  grid-column: 1;
+}
+
+.expertise-card:nth-child(5) {
+  grid-column: 2;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .expertise-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .expertise-card:nth-child(4),
+  .expertise-card:nth-child(5) {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .expertise {
+    padding: 80px 0;
+  }
+
+  .expertise-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .expertise-image {
+    height: 210px;
+  }
+
+  .expertise-content {
+    min-height: auto;
+    padding: 22px 24px 30px;
+  }
+
+  .expertise-top {
+    top: -195px;
+    left: 23px;
+  }
+}
