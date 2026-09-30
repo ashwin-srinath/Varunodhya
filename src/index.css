@@ -1344,3 +1344,386 @@ footer a:hover{
   }
 
 }
+/* =========================================================
+   VARUONDHYA — CLEAN PROFESSIONAL HERO
+   ========================================================= */
+
+/* Completely disable old submarine cursor */
+.submarine-cursor,
+.submarine-sonar-pulse,
+.submarine-wake,
+.sonar-cursor-glow {
+  display: none !important;
+}
+
+body.submarine-cursor-active {
+  cursor: auto !important;
+}
+
+body.submarine-cursor-active *,
+body.submarine-cursor-active a,
+body.submarine-cursor-active button,
+body.submarine-cursor-active input,
+body.submarine-cursor-active textarea,
+body.submarine-cursor-active select {
+  cursor: auto !important;
+}
+
+
+/* ---------------------------------------------------------
+   HERO
+   --------------------------------------------------------- */
+
+.hero {
+  position: relative;
+
+  min-height: calc(100vh - 72px);
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 72% 42%,
+      rgba(35, 108, 135, 0.18),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 20% 70%,
+      rgba(20, 72, 94, 0.12),
+      transparent 30%
+    ),
+    #05080d;
+
+  border-bottom: 1px solid var(--line);
+}
+
+
+/* Very subtle technical background */
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(79, 209, 224, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(79, 209, 224, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 90px 90px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 20%,
+      black 80%,
+      transparent
+    );
+}
+
+
+/* Soft central glow */
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 650px;
+  height: 650px;
+
+  right: -200px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(79, 209, 224, 0.08),
+      transparent 68%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   HERO CONTENT
+   --------------------------------------------------------- */
+
+.hero-content {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(1180px, 92vw);
+
+  padding-top: 110px;
+  padding-bottom: 90px;
+}
+
+
+/* Small technical label */
+
+.hero-label {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 28px;
+
+  color: var(--cy);
+
+  font:
+    500 10px / 1.4 Inter,
+    sans-serif;
+
+  letter-spacing: 0.28em;
+}
+
+.hero-label::before {
+  content: "";
+
+  width: 32px;
+  height: 1px;
+
+  background: var(--cy);
+
+  box-shadow:
+    0 0 12px rgba(79, 209, 224, 0.6);
+}
+
+
+/* ---------------------------------------------------------
+   COMPANY NAME
+   --------------------------------------------------------- */
+
+.hero h1 {
+  margin: 0;
+
+  max-width: none;
+
+  color: #eef7fa;
+
+  font-family:
+    Fraunces,
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      4rem,
+      9vw,
+      8rem
+    );
+
+  font-weight: 300;
+
+  line-height: 0.9;
+
+  letter-spacing: 0.08em;
+
+  text-shadow:
+    0 0 40px rgba(79, 209, 224, 0.08);
+}
+
+
+/* Company subtitle */
+
+.hero-subtitle {
+  margin-top: 22px;
+
+  color: var(--cy);
+
+  font:
+    500 11px / 1.4 Inter,
+    sans-serif;
+
+  letter-spacing: 0.48em;
+}
+
+
+/* Divider */
+
+.hero-divider {
+  width: 90px;
+  height: 1px;
+
+  margin: 34px 0 30px;
+
+  background: var(--cy);
+
+  box-shadow:
+    0 0 12px rgba(79, 209, 224, 0.4);
+}
+
+
+/* Description */
+
+.hero-description {
+  max-width: 650px;
+
+  color: var(--mut);
+
+  font-size: 16px;
+
+  font-weight: 300;
+
+  line-height: 1.8;
+}
+
+
+/* ---------------------------------------------------------
+   BUTTONS
+   --------------------------------------------------------- */
+
+.hero-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: 36px;
+}
+
+
+/* ---------------------------------------------------------
+   BOTTOM TECHNOLOGY STRIP
+   --------------------------------------------------------- */
+
+.hero-bottom {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 28px;
+
+  margin-top: 80px;
+
+  padding-top: 22px;
+
+  border-top: 1px solid
+    rgba(79, 209, 224, 0.12);
+
+  color: #60717e;
+
+  font:
+    500 9px / 1.4 Inter,
+    sans-serif;
+
+  letter-spacing: 0.18em;
+}
+
+.hero-bottom span {
+  position: relative;
+}
+
+.hero-bottom span:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: var(--cy);
+
+  right: -16px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  opacity: 0.5;
+}
+
+
+/* ---------------------------------------------------------
+   REMOVE OLD HERO ANIMATIONS
+   --------------------------------------------------------- */
+
+.hero .sonar,
+.hero .beams {
+  display: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+  .hero {
+    min-height:
+      calc(100vh - 64px);
+  }
+
+  .hero-content {
+    padding-top: 90px;
+    padding-bottom: 70px;
+  }
+
+  .hero h1 {
+    font-size:
+      clamp(
+        3.2rem,
+        16vw,
+        5rem
+      );
+
+    letter-spacing: 0.04em;
+  }
+
+  .hero-subtitle {
+    font-size: 9px;
+    letter-spacing: 0.28em;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .hero-buttons .btn {
+    text-align: center;
+  }
+
+  .hero-bottom {
+    gap: 16px;
+
+    margin-top: 60px;
+
+    font-size: 8px;
+  }
+
+  .hero-bottom span:not(:last-child)::after {
+    display: none;
+  }
+}
