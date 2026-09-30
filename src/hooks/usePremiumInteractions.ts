@@ -6,61 +6,95 @@ export default function usePremiumInteractions() {
       '(prefers-reduced-motion: reduce)'
     ).matches;
 
-    const coarsePointer = window.matchMedia(
+    const touchDevice = window.matchMedia(
       '(hover: none), (pointer: coarse)'
     ).matches;
 
-    if (reducedMotion) return;
+    /*
+     * Accessibility:
+     * Do not run the interactive effects when
+     * the user has requested reduced motion.
+     */
+    if (reducedMotion) {
+      return;
+    }
 
     /*
-     * ---------------------------------------------------------
+     * ========================================================
      * HERO CURSOR GLOW
-     * ---------------------------------------------------------
+     * ========================================================
      */
-    const hero = document.querySelector<HTMLElement>('.hero');
 
-    const handleHeroMove = (event: PointerEvent) => {
-      if (!hero || coarsePointer) return;
+    const hero =
+      document.querySelector<HTMLElement>(
+        '.sonar-hero'
+      );
 
-      const rect = hero.getBoundingClientRect();
+    const handleHeroMove = (
+      event: PointerEvent
+    ) => {
+      if (!hero || touchDevice) return;
+
+      const rect =
+        hero.getBoundingClientRect();
 
       hero.style.setProperty(
-        '--hero-mouse-x',
+        '--cursor-x',
         `${event.clientX - rect.left}px`
       );
 
       hero.style.setProperty(
-        '--hero-mouse-y',
+        '--cursor-y',
         `${event.clientY - rect.top}px`
       );
 
-      hero.classList.add('hero-cursor-active');
+      hero.classList.add(
+        'hero-cursor-active'
+      );
     };
 
     const handleHeroLeave = () => {
-      hero?.classList.remove('hero-cursor-active');
+      hero?.classList.remove(
+        'hero-cursor-active'
+      );
     };
 
-    if (hero && !coarsePointer) {
-      hero.addEventListener('pointermove', handleHeroMove);
-      hero.addEventListener('pointerleave', handleHeroLeave);
+    if (hero && !touchDevice) {
+      hero.addEventListener(
+        'pointermove',
+        handleHeroMove
+      );
+
+      hero.addEventListener(
+        'pointerleave',
+        handleHeroLeave
+      );
     }
 
     /*
-     * ---------------------------------------------------------
+     * ========================================================
      * MAGNETIC BUTTONS
-     * ---------------------------------------------------------
+     * ========================================================
      */
-    const buttons = Array.from(
-      document.querySelectorAll<HTMLElement>('.btn')
-    );
 
-    const cleanups: (() => void)[] = [];
+    const buttons =
+      Array.from(
+        document.querySelectorAll<HTMLElement>(
+          '.btn'
+        )
+      );
 
-    if (!coarsePointer) {
+    const buttonCleanups:
+      (() => void)[] = [];
+
+    if (!touchDevice) {
       buttons.forEach((button) => {
-        const handleMove = (event: PointerEvent) => {
-          const rect = button.getBoundingClientRect();
+
+        const handleMove = (
+          event: PointerEvent
+        ) => {
+          const rect =
+            button.getBoundingClientRect();
 
           const x =
             event.clientX -
@@ -70,43 +104,66 @@ export default function usePremiumInteractions() {
             event.clientY -
             (rect.top + rect.height / 2);
 
-          const strength = 0.14;
+          /*
+           * Keep the movement deliberately subtle.
+           */
+          const strength = 0.12;
 
-          button.style.transform = `
-            translate3d(
-              ${x * strength}px,
-              ${y * strength}px,
-              0
-            )
-          `;
+          button.style.transform =
+            `translate3d(${x * strength}px, ${y * strength}px, 0)`;
         };
 
         const reset = () => {
           button.style.transform = '';
         };
 
-        button.addEventListener('pointermove', handleMove);
-        button.addEventListener('pointerleave', reset);
+        button.addEventListener(
+          'pointermove',
+          handleMove
+        );
 
-        cleanups.push(() => {
-          button.removeEventListener('pointermove', handleMove);
-          button.removeEventListener('pointerleave', reset);
+        button.addEventListener(
+          'pointerleave',
+          reset
+        );
+
+        buttonCleanups.push(() => {
+          button.removeEventListener(
+            'pointermove',
+            handleMove
+          );
+
+          button.removeEventListener(
+            'pointerleave',
+            reset
+          );
         });
       });
     }
 
     /*
-     * ---------------------------------------------------------
+     * ========================================================
      * CLEANUP
-     * ---------------------------------------------------------
+     * ========================================================
      */
+
     return () => {
-      if (hero && !coarsePointer) {
-        hero.removeEventListener('pointermove', handleHeroMove);
-        hero.removeEventListener('pointerleave', handleHeroLeave);
+
+      if (hero && !touchDevice) {
+        hero.removeEventListener(
+          'pointermove',
+          handleHeroMove
+        );
+
+        hero.removeEventListener(
+          'pointerleave',
+          handleHeroLeave
+        );
       }
 
-      cleanups.forEach((cleanup) => cleanup());
+      buttonCleanups.forEach(
+        (cleanup) => cleanup()
+      );
     };
   }, []);
 }
