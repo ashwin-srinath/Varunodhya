@@ -8,7 +8,29 @@ import Careers from './components/Careers';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import useScrollReveal from './hooks/useScrollReveal';
+import usePremiumInteractions from './hooks/usePremiumInteractions';
+export default function App() {
+  useScrollReveal();
+  usePremiumInteractions();
 
+  return (
+    <>
+      <Navbar />
+
+      <main>
+        <Hero />
+        <Services />
+        <About />
+        <Training />
+        <Projects />
+        <Careers />
+        <Contact />
+      </main>
+
+      <Footer />
+    </>
+  );
+}
 export default function App() {
   useScrollReveal();
 
