@@ -1,65 +1,130 @@
-import { ArrowDown, ArrowRight, Radio, Waves } from 'lucide-react';
+import { company } from '../config/site';
 
 export default function Hero() {
   return (
-    <section className="hero sonar-hero" id="home">
-      {/* Atmospheric background layers */}
-      <div className="sonar-hero-background" aria-hidden="true" />
-      <div className="sonar-hero-gradient" aria-hidden="true" />
-      <div className="sonar-grid-overlay" aria-hidden="true" />
+    <section
+      className="hero sonar-hero"
+      id="home"
+    >
 
-      {/* Cursor-following acoustic glow */}
-      <div className="sonar-cursor-glow" aria-hidden="true" />
+      {/* Cursor-following cyan light */}
+      <div
+        className="hero-cursor-glow"
+        aria-hidden="true"
+      />
 
-      <div className="wrap sonar-hero-content">
+      {/* Cinematic underwater background */}
+      <div
+        className="sonar-hero-background"
+        aria-hidden="true"
+      />
+
+      {/* Dark cinematic overlay */}
+      <div
+        className="sonar-hero-gradient"
+        aria-hidden="true"
+      />
+
+      {/* Technical grid */}
+      <div
+        className="sonar-grid-overlay"
+        aria-hidden="true"
+      />
+
+      {/* Existing sonar animation */}
+      <div
+        className="beams"
+        aria-hidden="true"
+      />
+
+      <div
+        className="sonar"
+        aria-hidden="true"
+      >
+        <i />
+        <i />
+        <i />
+      </div>
+
+      <div className="sonar-hero-content">
+
         <div className="hero-kicker rev">
           <span className="hero-kicker-line" />
-          MARINE TECHNOLOGY · AI · DEFENCE SYSTEMS
+          MARINE · DEFENCE · TECHNOLOGY
         </div>
 
         <div className="hero-main">
+
           <div className="hero-copy">
+
             <div className="hero-system-label rev">
               <span className="hero-system-dot" />
-              SYSTEMS ONLINE
+              VARUNA CONSULTANCY SERVICES LLP
               <span className="hero-system-divider" />
-              ACQUISITION / ANALYSIS / INTELLIGENCE
+              SYSTEMS / RESEARCH / TRAINING
+            </div>
+
+            <div className="mark rev">
+              {company.shortName}
+              <small>
+                {company.wordmarkSub}
+              </small>
             </div>
 
             <h1 className="rev">
-              Engineering
-              <br />
-              Intelligence
-              <br />
-              <span>Beneath the Surface.</span>
+              {company.headline}
             </h1>
 
             <p className="lead rev">
-              Advanced marine acoustic technologies, embedded systems,
-              RADAR and SONAR algorithms, AI-powered defence technology,
-              and professional technical training.
+              {company.intro}
             </p>
 
             <div className="cta rev">
-              <a href="#services" className="btn solid magnetic-btn">
-                Explore Our Capabilities
-                <ArrowRight size={17} />
+
+              <a
+                href="#services"
+                className="btn solid"
+              >
+                Explore Our Services
               </a>
 
-              <a href="#contact" className="btn ghost magnetic-btn">
-                Talk to Our Team
+              <a
+                href="#contact"
+                className="btn ghost"
+              >
+                Get in Touch
               </a>
+
             </div>
+
+            <a
+              href="#services"
+              className="scroll-indicator rev"
+            >
+              Scroll to explore
+              <span>↓</span>
+            </a>
+
           </div>
 
-          {/* Technical SONAR information panel */}
-          <div className="hero-tech-panel rev" aria-hidden="true">
+          {/* Technical sonar display */}
+          <div
+            className="hero-tech-panel rev"
+            aria-hidden="true"
+          >
+
             <div className="hero-tech-header">
-              <span>ACOUSTIC FIELD</span>
-              <span>LIVE</span>
+              <span>
+                ACOUSTIC FIELD
+              </span>
+
+              <span>
+                ACTIVE
+              </span>
             </div>
 
             <div className="hero-sonar-display">
+
               <div className="sonar-ring sonar-ring-1" />
               <div className="sonar-ring sonar-ring-2" />
               <div className="sonar-ring sonar-ring-3" />
@@ -78,52 +143,68 @@ export default function Hero() {
               </div>
 
               <div className="sonar-center">
-                <Waves size={19} strokeWidth={1.4} />
+                +
               </div>
+
             </div>
 
             <div className="hero-tech-data">
+
               <div>
-                <span>MODE</span>
-                <strong>PASSIVE</strong>
+                <span>
+                  RANGE
+                </span>
+                <strong>
+                  04.82 NM
+                </strong>
               </div>
 
               <div>
-                <span>RANGE</span>
-                <strong>ACTIVE</strong>
+                <span>
+                  STATUS
+                </span>
+                <strong>
+                  NOMINAL
+                </strong>
               </div>
 
               <div>
-                <span>SIGNAL</span>
-                <strong>ANALYSING</strong>
+                <span>
+                  MODE
+                </span>
+                <strong>
+                  ACTIVE
+                </strong>
               </div>
+
             </div>
+
           </div>
+
         </div>
 
-        <a href="#services" className="scroll-indicator rev">
-          <span>Scroll to explore</span>
-          <ArrowDown size={16} />
-        </a>
       </div>
 
-      {/* Side technical marker */}
-      <div className="hero-side-label" aria-hidden="true">
-        <span>MARINE</span>
-        <span>ACOUSTICS</span>
-        <span>AI / DEFENCE</span>
-        <span>ENGINEERING</span>
+      <div className="hero-side-label">
+        UNDERWATER
+        TECHNOLOGIES
       </div>
 
-      {/* Bottom technical status line */}
-      <div className="hero-bottom-line" aria-hidden="true">
-        <span>VARUNODHYA CONSULTANCY SERVICES</span>
+      <div className="hero-bottom-line">
+        <span>
+          TECHNICAL CONSULTANCY
+        </span>
 
         <span className="hero-bottom-status">
-          <Radio size={13} />
-          ADVANCED TECHNOLOGY · REAL-WORLD IMPACT
+          <span className="hero-system-dot" />
+          SYSTEM ONLINE
+        </span>
+
+        <span>
+          KNOWLEDGE · PRECISION · DEPTH
         </span>
       </div>
+
     </section>
   );
 }
