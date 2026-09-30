@@ -1523,3 +1523,35 @@ footer a:hover {
 :root:not([data-theme="light"]) {
   color-scheme: dark;
 }
+/* =========================================================
+   PREMIUM HERO CURSOR GLOW
+   ========================================================= */
+
+.hero {
+  --hero-mouse-x: 72%;
+  --hero-mouse-y: 35%;
+}
+
+.hero-cursor-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      260px circle at
+        var(--hero-mouse-x)
+        var(--hero-mouse-y),
+      rgba(79, 209, 224, 0.13),
+      rgba(79, 209, 224, 0.045) 32%,
+      transparent 72%
+    );
+
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.hero-cursor-active .hero-cursor-glow {
+  opacity: 1;
+}
