@@ -1,4 +1,5 @@
 import Navbar from './components/Navbar';
+import Hero from './components/Hero';
 import Services from './components/Services';
 import About from './components/About';
 import Training from './components/Training';
@@ -16,11 +17,25 @@ export default function App() {
       <Navbar />
 
       <main>
+        {/* PAGE 1 — HERO */}
+        <Hero />
+
+        {/* PAGE 2 — WHAT WE DO */}
         <Services />
+
+        {/* PAGE 3 — ABOUT */}
         <About />
+
+        {/* PAGE 4 — TRAINING */}
         <Training />
+
+        {/* PAGE 5 — PROJECTS */}
         <Projects />
+
+        {/* PAGE 6 — CAREERS */}
         <Careers />
+
+        {/* PAGE 7 — CONTACT */}
         <Contact />
       </main>
 
