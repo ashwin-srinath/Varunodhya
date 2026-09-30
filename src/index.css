@@ -832,3 +832,332 @@ footer a:hover{
   font-size:12.5px;
   margin-top:18px;
 }
+/* =========================================================
+   VARUNODHYA HERO
+   ========================================================= */
+
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  border-bottom: 1px solid rgba(79, 209, 224, 0.18);
+  background: #02070d;
+}
+
+/* Hero image */
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -5;
+
+  background-image: url("/images/marine-acoustic-technologies.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  transform: scale(1.02);
+}
+
+/* Dark cinematic overlay */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -4;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 7, 13, 0.97) 0%,
+      rgba(2, 7, 13, 0.88) 25%,
+      rgba(2, 7, 13, 0.55) 52%,
+      rgba(2, 7, 13, 0.25) 78%,
+      rgba(2, 7, 13, 0.48) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(2, 7, 13, 0.25),
+      rgba(2, 7, 13, 0.82)
+    );
+}
+
+/* Technical grid */
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+
+  opacity: 0.13;
+
+  background-image:
+    linear-gradient(
+      rgba(79, 209, 224, 0.12) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(79, 209, 224, 0.12) 1px,
+      transparent 1px
+    );
+
+  background-size: 90px 90px;
+
+  mask-image:
+    linear-gradient(
+      90deg,
+      transparent,
+      black 25%,
+      black 75%,
+      transparent
+    );
+}
+
+/* Hero content */
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+  padding: 120px 0;
+}
+
+/* Small technical label */
+
+.hero-kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 28px;
+
+  color: var(--cy);
+
+  font:
+    500 10px/1.6 Inter,
+    sans-serif;
+
+  letter-spacing: 0.25em;
+}
+
+.hero-kicker-line {
+  width: 32px;
+  height: 1px;
+
+  background: var(--cy);
+
+  box-shadow:
+    0 0 12px rgba(79, 209, 224, 0.7);
+}
+
+/* Hero heading */
+
+.hero h1 {
+  position: relative;
+  z-index: 6;
+
+  max-width: 800px;
+
+  margin: 24px 0;
+
+  color: #f0f8fc;
+
+  font-size: clamp(
+    3rem,
+    6vw,
+    5.8rem
+  );
+
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+
+  text-shadow:
+    0 5px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Hero paragraph */
+
+.hero .lead {
+  position: relative;
+  z-index: 6;
+
+  max-width: 600px;
+
+  color: rgba(232, 238, 244, 0.76);
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Buttons */
+
+.hero .cta {
+  position: relative;
+  z-index: 6;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  margin-top: 36px;
+}
+
+/* SONAR animation */
+
+.hero .sonar {
+  position: absolute;
+
+  right: -5%;
+  top: 50%;
+
+  width: min(650px, 70vw);
+  aspect-ratio: 1;
+
+  transform: translateY(-50%);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+.hero .sonar i {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  margin: auto;
+
+  border:
+    1px solid
+    rgba(79, 209, 224, 0.28);
+
+  border-radius: 50%;
+
+  animation:
+    heroSonarPulse 6s
+    ease-out infinite;
+
+  opacity: 0;
+}
+
+.hero .sonar i:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.hero .sonar i:nth-child(3) {
+  animation-delay: 4s;
+}
+
+@keyframes heroSonarPulse {
+
+  0% {
+    transform: scale(0.1);
+    opacity: 0.65;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+
+}
+
+/* Side technical label */
+
+.hero-side-label {
+  position: absolute;
+
+  right: 3vw;
+  top: 50%;
+
+  z-index: 6;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  color:
+    rgba(232, 238, 244, 0.4);
+
+  font:
+    500 8px/1.5 Inter,
+    sans-serif;
+
+  letter-spacing: 0.22em;
+
+  writing-mode: vertical-rl;
+
+  transform:
+    translateY(-50%);
+
+  pointer-events: none;
+}
+
+/* Mobile */
+
+@media (max-width: 900px) {
+
+  .hero {
+    min-height: 760px;
+  }
+
+  .hero-background {
+    background-position: 62% center;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(2, 7, 13, 0.96),
+        rgba(2, 7, 13, 0.72)
+      ),
+      linear-gradient(
+        180deg,
+        rgba(2, 7, 13, 0.2),
+        rgba(2, 7, 13, 0.9)
+      );
+  }
+
+  .hero-content {
+    padding: 100px 0;
+  }
+
+  .hero h1 {
+    max-width: 650px;
+    font-size: clamp(
+      2.8rem,
+      12vw,
+      4.5rem
+    );
+  }
+
+  .hero .sonar {
+    right: -45%;
+    width: 620px;
+    opacity: 0.35;
+  }
+
+  .hero-side-label {
+    display: none;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero .sonar i {
+    animation: none;
+    opacity: 0.12;
+  }
+
+}
