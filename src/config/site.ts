@@ -17,10 +17,10 @@ export const company = {
   description:
     'A multidisciplinary consultancy supporting complex scientific, engineering, environmental, and defence-related projects.',
   /* Placeholders — replace with real contact details when confirmed. */
-  email: 'varunodhya@gmail.com',
-  phone: '+91 88489 92917',
+  email: ': varunodhya@gmail.com',
+  phone: ': +91 88489 92917',
   address:
-    'Thrikkakara P.O., Kochi, Kerala – 682021, India',
+    ': Thrikkakara P.O., Kochi, Kerala – 682021, India',
 };
 
 export const navItems = [
