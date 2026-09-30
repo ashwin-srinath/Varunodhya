@@ -1161,3 +1161,186 @@ footer a:hover{
   }
 
 }
+/* =========================================================
+   SIMPLE VARUONDHYA OPENING SCREEN
+   ========================================================= */
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - 72px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(20, 70, 90, 0.22),
+      transparent 42%
+    ),
+    #05080d;
+
+  border-bottom: 1px solid var(--line);
+}
+
+/* Remove old hero graphics */
+
+.hero::before,
+.hero::after,
+.hero-background,
+.hero-overlay,
+.hero-grid,
+.hero-side-label,
+.beams {
+  display: none !important;
+}
+
+/* Remove SONAR from opening screen */
+
+.hero .sonar {
+  display: none !important;
+}
+
+/* Main hero content */
+
+.hero-simple {
+  position: relative;
+  z-index: 2;
+
+  width: min(1000px, 90vw);
+
+  text-align: center;
+
+  padding: 120px 0;
+}
+
+/* Company name */
+
+.hero-company-name {
+  margin-bottom: 32px;
+}
+
+.hero-logo-name {
+  font-family: Fraunces, Georgia, serif;
+
+  font-size: clamp(
+    3rem,
+    8vw,
+    7rem
+  );
+
+  font-weight: 400;
+
+  letter-spacing: 0.22em;
+
+  line-height: 1;
+
+  color: #eef7fa;
+
+  text-shadow:
+    0 0 30px rgba(79, 209, 224, 0.08);
+}
+
+/* Company subtitle */
+
+.hero-subtitle {
+  margin-top: 18px;
+
+  font-family: Inter, system-ui, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.45em;
+
+  color: var(--cy);
+}
+
+/* Thin technical line */
+
+.hero-line {
+  width: 90px;
+  height: 1px;
+
+  margin: 0 auto 32px;
+
+  background: var(--cy);
+
+  box-shadow:
+    0 0 15px rgba(79, 209, 224, 0.45);
+}
+
+/* Introduction */
+
+.hero-intro {
+  max-width: 680px;
+
+  margin: 0 auto;
+
+  color: var(--mut);
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  font-weight: 300;
+}
+
+/* Buttons */
+
+.hero-simple .cta {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 14px;
+
+  margin-top: 40px;
+}
+
+/* Remove old hero heading styling */
+
+.hero h1 {
+  margin: 0;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+  .hero {
+    min-height: calc(100vh - 64px);
+  }
+
+  .hero-simple {
+    padding: 90px 0;
+  }
+
+  .hero-logo-name {
+    font-size: clamp(
+      2.4rem,
+      11vw,
+      4.5rem
+    );
+
+    letter-spacing: 0.14em;
+  }
+
+  .hero-subtitle {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+  }
+
+  .hero-intro {
+    font-size: 14px;
+  }
+
+}
