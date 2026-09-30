@@ -3,25 +3,27 @@ import { company } from '../config/site';
 export default function Hero() {
   return (
     <section className="hero" id="home">
-      <div className="wrap hero-simple">
+      <div className="hero-content wrap">
 
-        <div className="hero-company-name">
-          <div className="hero-logo-name">
-            VARUONDHYA
-          </div>
-
-          <div className="hero-subtitle">
-            CONSULTANCY SERVICES LLP
-          </div>
+        <div className="hero-label">
+          MARINE • DEFENCE • TECHNOLOGY
         </div>
 
-        <div className="hero-line" />
+        <h1>
+          {company.shortName}
+        </h1>
 
-        <p className="hero-intro">
+        <div className="hero-subtitle">
+          {company.wordmarkSub}
+        </div>
+
+        <div className="hero-divider" />
+
+        <p className="hero-description">
           {company.intro}
         </p>
 
-        <div className="cta">
+        <div className="hero-buttons">
           <a href="#services" className="btn solid">
             Explore Our Services
           </a>
@@ -29,6 +31,13 @@ export default function Hero() {
           <a href="#contact" className="btn ghost">
             Get in Touch
           </a>
+        </div>
+
+        <div className="hero-bottom">
+          <span>UNDERWATER TECHNOLOGY</span>
+          <span>SONAR / RADAR</span>
+          <span>EMBEDDED SYSTEMS</span>
+          <span>AI & DEFENCE</span>
         </div>
 
       </div>
