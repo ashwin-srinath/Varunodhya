@@ -7,8 +7,8 @@
  * been invented: unknown values are left as visible placeholders on purpose.
  */
 export const company = {
-  name: 'VARUNA CONSULTANCY SERVICES',
-  shortName: 'VARUNA',
+  name: 'VARUNODHYA CONSULTANCY SERVICES',
+  shortName: 'VARUNODHYA',
   wordmarkSub: 'CONSULTANCY SERVICES LLP',
   tagline: 'Expertise Beneath the Surface.',
   headline: 'Expertise Beneath the Surface. Possibilities Beyond Boundaries.',
@@ -17,10 +17,10 @@ export const company = {
   description:
     'A multidisciplinary consultancy supporting complex scientific, engineering, environmental, and defence-related projects.',
   /* Placeholders — replace with real contact details when confirmed. */
-  email: 'csvaruna@gmail.com',
+  email: 'varunodhya@gmail.com',
   phone: '+91 88489 92917',
   address:
-    'A5, Samyuktha Residency, Thrikkakara P.O., Kochi, Kerala – 682021, India',
+    'Thrikkakara P.O., Kochi, Kerala – 682021, India',
 };
 
 export const navItems = [
