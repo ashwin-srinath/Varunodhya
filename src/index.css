@@ -1653,6 +1653,213 @@ footer a:hover {
     font-size: 1.35rem;
   }
 
+
+
+
+
+
+   /* =========================================================
+   EXPERTISE
+   ========================================================= */
+
+.expertise-section {
+  position: relative;
+  padding: 120px 0;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.expertise-heading {
+  max-width: 850px;
+  margin-bottom: 65px;
+}
+
+.expertise-title {
+  margin: 18px 0 25px;
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  font-weight: 500;
+}
+
+.expertise-title span {
+  color: var(--cy);
+}
+
+.expertise-intro {
+  max-width: 680px;
+  margin: 0;
+  color: var(--mut);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Grid */
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+/* Cards */
+
+.expertise-card {
+  position: relative;
+  background: var(--bg);
+  overflow: hidden;
+  min-width: 0;
+}
+
+.expertise-card:last-child {
+  grid-column: 1 / -1;
+}
+
+/* Image */
+
+.expertise-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  background: #03070b;
+}
+
+.expertise-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition:
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 0.6s ease;
+}
+
+.expertise-card:hover .expertise-image {
+  transform: scale(1.045);
+}
+
+/* Dark gradient over image */
+
+.expertise-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to top,
+      rgba(3, 7, 11, 0.92) 0%,
+      rgba(3, 7, 11, 0.25) 45%,
+      rgba(3, 7, 11, 0.05) 100%
+    );
+  pointer-events: none;
+}
+
+/* Number */
+
+.expertise-number {
+  position: absolute;
+  top: 25px;
+  left: 28px;
+
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: var(--cy);
+
+  border: 1px solid rgba(79, 209, 224, 0.45);
+  padding: 9px 12px;
+
+  background: rgba(5, 8, 13, 0.55);
+  backdrop-filter: blur(8px);
+}
+
+/* Content */
+
+.expertise-card-content {
+  position: relative;
+  padding: 30px 32px 35px;
+  background: var(--panel);
+}
+
+.expertise-card-content h3 {
+  margin: 0 0 15px;
+  max-width: 600px;
+
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  line-height: 1.15;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.expertise-card-content p {
+  max-width: 680px;
+  margin: 0;
+
+  color: var(--mut);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.expertise-accent {
+  width: 45px;
+  height: 2px;
+  margin-top: 25px;
+  background: var(--cy);
+  transition: width 0.35s ease;
+}
+
+.expertise-card:hover .expertise-accent {
+  width: 90px;
+}
+
+/* Last / Training image */
+
+.expertise-card:last-child .expertise-image-wrap {
+  height: 480px;
+}
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+  .expertise-section {
+    padding: 90px 0;
+  }
+
+  .expertise-heading {
+    margin-bottom: 45px;
+  }
+
+  .expertise-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .expertise-card:last-child {
+    grid-column: auto;
+  }
+
+  .expertise-image-wrap,
+  .expertise-card:last-child .expertise-image-wrap {
+    height: 350px;
+  }
+
+  .expertise-card-content {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .expertise-image-wrap,
+  .expertise-card:last-child .expertise-image-wrap {
+    height: 280px;
+  }
+
+  .expertise-title {
+    font-size: 2.8rem;
+  }
+}
   .service-card p {
     font-size: 13.5px;
   }
