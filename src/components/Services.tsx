@@ -1,51 +1,47 @@
-import {
-  Waves,
-  Cpu,
-  RadioTower,
-  ShieldCheck,
-  GraduationCap,
-  ArrowUpRight,
-} from 'lucide-react';
-
 const services = [
   {
     num: '01',
+    category: 'ACOUSTIC SYSTEMS',
     title: 'Marine Acoustic Technologies',
-    Icon: Waves,
-    tag: 'ACOUSTIC SYSTEMS',
-    body: 'Specialized technologies and engineering support for underwater acoustics, acoustic sensing, detection, tracking, classification, and marine surveillance applications.',
-    href: '#expertise',
+    image: '/images/marine-acoustic-technologies.png',
+    body:
+      'Specialized technologies and engineering support for underwater acoustics, acoustic sensing, detection, tracking, classification, and marine surveillance applications.',
+    href: '#contact',
   },
   {
     num: '02',
+    category: 'EMBEDDED ENGINEERING',
     title: 'Embedded Systems Design and Development',
-    Icon: Cpu,
-    tag: 'EMBEDDED ENGINEERING',
-    body: 'Design and development of embedded hardware and software systems, including real-time processing, firmware, microcontrollers, system integration, and specialized electronic platforms.',
-    href: '#expertise',
+    image: '/images/embedded-systems.png',
+    body:
+      'Design and development of embedded hardware and software systems, including real-time processing, firmware, microcontrollers, system integration, and specialized electronic platforms.',
+    href: '#contact',
   },
   {
     num: '03',
+    category: 'SIGNAL PROCESSING',
     title: 'RADAR and SONAR Algorithm Design and Development',
-    Icon: RadioTower,
-    tag: 'SIGNAL PROCESSING',
-    body: 'Development of advanced algorithms for RADAR and SONAR applications, including signal processing, detection, tracking, classification, and intelligent sensing systems.',
-    href: '#expertise',
+    image: '/images/radar-sonar-algorithms.png',
+    body:
+      'Development of advanced algorithms for RADAR and SONAR applications, including signal processing, detection, tracking, classification, and intelligent sensing systems.',
+    href: '#contact',
   },
   {
     num: '04',
+    category: 'AI + DEFENCE',
     title: 'AI Powered Defence Technology Consultancy Services',
-    Icon: ShieldCheck,
-    tag: 'AI + DEFENCE',
-    body: 'Technical consultancy supporting the application of artificial intelligence, intelligent sensing, data-driven systems, and advanced technologies for defence and security applications.',
+    image: '/images/ai-defence-consultancy.png',
+    body:
+      'Technical consultancy supporting the application of artificial intelligence, intelligent sensing, data-driven systems, and advanced technologies for defence and security applications.',
     href: '#contact',
   },
   {
     num: '05',
+    category: 'KNOWLEDGE TRANSFER',
     title: 'Professional Training and Capacity Building',
-    Icon: GraduationCap,
-    tag: 'KNOWLEDGE TRANSFER',
-    body: 'Professional training and capacity-building programs focused on marine technology, acoustic systems, signal processing, embedded systems, algorithms, and emerging defence technologies.',
+    image: '/images/professional-training.png',
+    body:
+      'Professional training and capacity-building programs focused on marine technology, acoustic systems, signal processing, embedded systems, algorithms, and emerging defence technologies.',
     href: '#training',
   },
 ];
@@ -54,60 +50,74 @@ export default function Services() {
   return (
     <section id="services" className="services-section">
       <div className="wrap">
-        <div className="services-intro rev">
-          <div>
-            <p className="eyebrow">What We Do</p>
 
-            <h2 className="h2">
-              Engineering intelligence
-              <br />
-              beneath the surface.
+        <div className="services-intro">
+          <div>
+            <p className="eyebrow rev">What We Do</p>
+
+            <h2 className="rev h2 mw20">
+              Engineering expertise for complex marine and defence challenges.
             </h2>
           </div>
 
-          <p className="lead">
-            We combine marine technology, acoustic engineering, embedded
-            systems, advanced algorithms, artificial intelligence, and
-            professional expertise to support technically demanding
-            applications.
+          <p className="lead rev">
+            VARUONDHYA brings together specialized engineering,
+            technology consultancy and professional training across
+            marine acoustics, embedded systems, sensing, algorithms
+            and defence technologies.
           </p>
         </div>
 
         <div className="service-grid">
-          {services.map(({ num, title, body, href, Icon, tag }) => (
-            <article className="service-card rev" key={num}>
+
+          {services.map((service) => (
+            <article
+              className="service-card rev"
+              key={service.num}
+            >
+
+              {/* IMAGE */}
+              <div className="service-image">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                />
+
+                <div className="service-image-overlay" />
+
+                <span className="service-number">
+                  {service.num}
+                </span>
+              </div>
+
+              {/* CONTENT */}
+              <div className="service-content">
+
+                <p className="service-category">
+                  {service.category}
+                </p>
+
+                <h3>{service.title}</h3>
+
+                <p>{service.body}</p>
+
+                <a
+                  className="more"
+                  href={service.href}
+                >
+                  Explore Capability
+                  <span>↗</span>
+                </a>
+
+              </div>
+
               <div className="service-card-glow" />
 
-              <div className="service-card-content">
-                <div className="service-card-top">
-                  <span className="num">{num}</span>
-
-                  <div className="service-icon-wrap">
-                    <Icon
-                      className="ico"
-                      size={26}
-                      strokeWidth={1.5}
-                      aria-hidden="true"
-                    />
-                  </div>
-                </div>
-
-                <div className="service-card-body">
-                  <span className="service-tag">{tag}</span>
-
-                  <h3>{title}</h3>
-
-                  <p>{body}</p>
-                </div>
-
-                <a className="more" href={href}>
-                  <span>Explore capability</span>
-                  <ArrowUpRight size={16} />
-                </a>
-              </div>
             </article>
           ))}
+
         </div>
+
       </div>
     </section>
   );
