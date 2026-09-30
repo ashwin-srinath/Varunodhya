@@ -6,10 +6,19 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState('#home');
 
+  /*
+   * Detect which section is currently visible.
+   */
   useEffect(() => {
     const sections = navItems
       .map((item) => document.querySelector(item.href))
       .filter(Boolean) as HTMLElement[];
+
+    const home = document.querySelector('#home');
+
+    if (home && !sections.includes(home as HTMLElement)) {
+      sections.unshift(home as HTMLElement);
+    }
 
     if (!sections.length) return;
 
@@ -27,15 +36,89 @@ export default function Navbar() {
         }
       },
       {
-        rootMargin: '-35% 0px -55% 0px',
-        threshold: [0, 0.15, 0.3, 0.5, 0.75],
+        rootMargin: '-30% 0px -55% 0px',
+        threshold: [0, 0.1, 0.25, 0.5, 0.75],
       }
     );
 
-    sections.forEach((section) => observer.observe(section));
+    sections.forEach((section) =>
+      observer.observe(section)
+    );
 
     return () => observer.disconnect();
   }, []);
+
+  /*
+   * Move the single underline underneath
+   * whichever navigation item is active.
+   */
+  useEffect(() => {
+    const nav = document.querySelector('.links');
+
+    if (!nav) return;
+
+    const indicator =
+      nav.querySelector<HTMLElement>(
+        '.nav-active-indicator'
+      );
+
+    const activeLink =
+      nav.querySelector<HTMLAnchorElement>(
+        `a[href="${active}"]:not(.btn)`
+      );
+
+    if (!indicator || !activeLink) return;
+
+    const navRect = nav.getBoundingClientRect();
+    const linkRect = activeLink.getBoundingClientRect();
+
+    indicator.style.left =
+      `${linkRect.left - navRect.left}px`;
+
+    indicator.style.width =
+      `${linkRect.width}px`;
+  }, [active]);
+
+  /*
+   * Recalculate the underline if the browser
+   * is resized.
+   */
+  useEffect(() => {
+    const handleResize = () => {
+      const nav = document.querySelector('.links');
+
+      if (!nav) return;
+
+      const indicator =
+        nav.querySelector<HTMLElement>(
+          '.nav-active-indicator'
+        );
+
+      const activeLink =
+        nav.querySelector<HTMLAnchorElement>(
+          `a[href="${active}"]:not(.btn)`
+        );
+
+      if (!indicator || !activeLink) return;
+
+      const navRect = nav.getBoundingClientRect();
+      const linkRect = activeLink.getBoundingClientRect();
+
+      indicator.style.left =
+        `${linkRect.left - navRect.left}px`;
+
+      indicator.style.width =
+        `${linkRect.width}px`;
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () =>
+      window.removeEventListener(
+        'resize',
+        handleResize
+      );
+  }, [active]);
 
   return (
     <header>
@@ -52,23 +135,45 @@ export default function Navbar() {
 
         <button
           className="burger"
-          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-label={
+            open ? 'Close menu' : 'Open menu'
+          }
           aria-expanded={open}
           aria-controls="menu"
-          onClick={() => setOpen((value) => !value)}
+          onClick={() =>
+            setOpen((value) => !value)
+          }
         >
           {open ? (
-            <X size={24} strokeWidth={1.4} />
+            <X
+              size={24}
+              strokeWidth={1.4}
+            />
           ) : (
-            <Menu size={24} strokeWidth={1.4} />
+            <Menu
+              size={24}
+              strokeWidth={1.4}
+            />
           )}
         </button>
 
         <nav
-          className={open ? 'links open' : 'links'}
+          className={
+            open ? 'links open' : 'links'
+          }
           id="menu"
-          onClick={() => setOpen(false)}
+          onClick={(event) => {
+            const target =
+              event.target as HTMLElement;
+
+            if (
+              target.closest('a')
+            ) {
+              setOpen(false);
+            }
+          }}
         >
+
           <span
             className="nav-active-indicator"
             aria-hidden="true"
@@ -79,18 +184,23 @@ export default function Navbar() {
               key={item.href}
               href={item.href}
               className={
-                active === item.href ? 'active' : ''
+                active === item.href
+                  ? 'active'
+                  : ''
               }
             >
               {item.label}
             </a>
           ))}
 
-          <a href="#contact" className="btn solid">
+          <a
+            href="#contact"
+            className="btn solid"
+          >
             Get in Touch
           </a>
-        </nav>
 
+        </nav>
       </div>
     </header>
   );
