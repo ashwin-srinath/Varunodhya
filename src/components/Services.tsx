@@ -8,6 +8,7 @@ const services = [
       'Specialized technologies and engineering support for underwater acoustics, acoustic sensing, detection, tracking, classification, and marine surveillance applications.',
     href: '#contact',
   },
+
   {
     num: '02',
     category: 'EMBEDDED ENGINEERING',
@@ -17,6 +18,7 @@ const services = [
       'Design and development of embedded hardware and software systems, including real-time processing, firmware, microcontrollers, system integration, and specialized electronic platforms.',
     href: '#contact',
   },
+
   {
     num: '03',
     category: 'SIGNAL PROCESSING',
@@ -26,6 +28,7 @@ const services = [
       'Development of advanced algorithms for RADAR and SONAR applications, including signal processing, detection, tracking, classification, and intelligent sensing systems.',
     href: '#contact',
   },
+
   {
     num: '04',
     category: 'AI + DEFENCE',
@@ -35,6 +38,7 @@ const services = [
       'Technical consultancy supporting the application of artificial intelligence, intelligent sensing, data-driven systems, and advanced technologies for defence and security applications.',
     href: '#contact',
   },
+
   {
     num: '05',
     category: 'KNOWLEDGE TRANSFER',
@@ -48,70 +52,84 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="services-section">
+    <section
+      id="services"
+      className="services-section"
+    >
       <div className="wrap">
 
         <div className="services-intro">
+
           <div>
-            <p className="eyebrow rev">What We Do</p>
+            <p className="eyebrow rev">
+              What We Do
+            </p>
 
             <h2 className="rev h2 mw20">
-              Engineering expertise for complex marine and defence challenges.
+              Engineering expertise for complex
+              marine and defence challenges.
             </h2>
           </div>
 
           <p className="lead rev">
-            VARUONDHYA brings together specialized engineering,
-            technology consultancy and professional training across
-            marine acoustics, embedded systems, sensing, algorithms
-            and defence technologies.
+            VARUNA brings together specialized
+            engineering, technology consultancy
+            and professional training across
+            marine acoustics, embedded systems,
+            sensing, algorithms and defence
+            technologies.
           </p>
+
         </div>
 
         <div className="service-grid">
 
           {services.map((service) => (
             <article
-              className="service-card rev"
+              className="service-card-image rev"
               key={service.num}
             >
 
-              {/* IMAGE */}
               <div className="service-image">
                 <img
                   src={service.image}
                   alt={service.title}
                 />
-
-                <div className="service-image-overlay" />
-
-                <span className="service-number">
-                  {service.num}
-                </span>
               </div>
 
-              {/* CONTENT */}
-              <div className="service-content">
+              <div className="service-image-overlay" />
 
-                <p className="service-category">
-                  {service.category}
-                </p>
-
-                <h3>{service.title}</h3>
-
-                <p>{service.body}</p>
-
-                <a
-                  className="more"
-                  href={service.href}
-                >
-                  Explore Capability
-                  <span>↗</span>
-                </a>
-
+              <div className="service-image-number">
+                {service.num}
               </div>
 
-              <div className="service-card-glow" />
+              <div className="service-card-content">
+
+                <div className="service-card-body">
+
+                  <span className="service-tag">
+                    {service.category}
+                  </span>
+
+                  <h3>
+                    {service.title}
+                  </h3>
+
+                  <p>
+                    {service.body}
+                  </p>
+
+                  <a
+                    className="more"
+                    href={service.href}
+                  >
+                    Explore Capability
+                    <span>↗</span>
+                  </a>
+
+                </div>
+
+              </div>
 
             </article>
           ))}
