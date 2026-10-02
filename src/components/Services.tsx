@@ -56,7 +56,7 @@ export default function Services() {
         </p>
 
         <div className="services-grid">
-          {services.map(({ num, title, body, href, Icon, image }) => (
+          {services.map(({ num, title, body, Icon, image }) => (
             <article className="service-card rev" key={num}>
               <div className="service-image-wrap">
                 <img
