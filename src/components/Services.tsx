@@ -1,109 +1,83 @@
-import {
-  Waves,
-  Cpu,
-  RadioTower,
-  ShieldCheck,
-  GraduationCap,
-  ArrowUpRight,
-} from 'lucide-react';
+import { Waves, Cpu, Radio, ShieldCheck, GraduationCap } from 'lucide-react';
 
 const services = [
   {
     num: '01',
     title: 'Marine Acoustic Technologies',
     Icon: Waves,
-    tag: 'ACOUSTIC SYSTEMS',
-    body: 'Specialized technologies and engineering support for underwater acoustics, acoustic sensing, detection, tracking, classification, and marine surveillance applications.',
-    href: '#expertise',
+    image: '/images/marine-acoustic-technologies.png',
+    body: 'Marine acoustic technologies, underwater sensing, acoustic surveillance, detection, tracking, classification, and related underwater acoustic systems.',
   },
   {
     num: '02',
     title: 'Embedded Systems Design and Development',
     Icon: Cpu,
-    tag: 'EMBEDDED ENGINEERING',
-    body: 'Design and development of embedded hardware and software systems, including real-time processing, firmware, microcontrollers, system integration, and specialized electronic platforms.',
-    href: '#expertise',
+    image: '/images/embedded-systems.png',
+    body: 'Embedded systems design and development for specialized sensing, processing, control, instrumentation, and technology applications.',
   },
   {
     num: '03',
     title: 'RADAR and SONAR Algorithm Design and Development',
-    Icon: RadioTower,
-    tag: 'SIGNAL PROCESSING',
-    body: 'Development of advanced algorithms for RADAR and SONAR applications, including signal processing, detection, tracking, classification, and intelligent sensing systems.',
-    href: '#expertise',
+    Icon: Radio,
+    image: '/images/radar-sonar-algorithms.png',
+    body: 'Design and development of RADAR and SONAR algorithms for signal processing, detection, tracking, classification, analysis, and advanced sensing applications.',
   },
   {
     num: '04',
     title: 'AI Powered Defence Technology Consultancy Services',
     Icon: ShieldCheck,
-    tag: 'AI + DEFENCE',
-    body: 'Technical consultancy supporting the application of artificial intelligence, intelligent sensing, data-driven systems, and advanced technologies for defence and security applications.',
-    href: '#contact',
+    image: '/images/ai-defence-consultancy.png',
+    body: 'AI-powered defence technology consultancy services supporting advanced sensing, intelligent systems, data-driven solutions, research, and technology development.',
   },
   {
     num: '05',
     title: 'Professional Training and Capacity Building',
     Icon: GraduationCap,
-    tag: 'KNOWLEDGE TRANSFER',
-    body: 'Professional training and capacity-building programs focused on marine technology, acoustic systems, signal processing, embedded systems, algorithms, and emerging defence technologies.',
-    href: '#training',
+    image: '/images/professional-training.jpg.png',
+    body: 'Professional training and capacity-building programs designed to develop specialized technical knowledge, practical skills, and expertise in advanced technology domains.',
   },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="services-section">
+    <section id="services">
       <div className="wrap">
-        <div className="services-intro rev">
-          <div>
-            <p className="eyebrow">What We Do</p>
+        <p className="eyebrow rev">What We Do</p>
 
-            <h2 className="h2">
-              Engineering intelligence
-              <br />
-              beneath the surface.
-            </h2>
-          </div>
+        <h2 className="rev h2 services-heading">
+          Advanced technology, engineering and expertise for the underwater and defence domain.
+        </h2>
 
-          <p className="lead">
-            We combine marine technology, acoustic engineering, embedded
-            systems, advanced algorithms, artificial intelligence, and
-            professional expertise to support technically demanding
-            applications.
-          </p>
-        </div>
+        <p className="lead rev services-intro">
+          Varuondhya provides specialized technology solutions, consultancy,
+          engineering expertise, and professional training across marine
+          acoustics, embedded systems, RADAR, SONAR, artificial intelligence,
+          and defence technologies.
+        </p>
 
-        <div className="service-grid">
-          {services.map(({ num, title, body, href, Icon, tag }) => (
+        <div className="services-grid">
+          {services.map(({ num, title, body, href, Icon, image }) => (
             <article className="service-card rev" key={num}>
-              <div className="service-card-glow" />
+              <div className="service-image-wrap">
+                <img
+                  src={image}
+                  alt={title}
+                  className="service-image"
+                  loading="lazy"
+                />
 
-              <div className="service-card-content">
-                <div className="service-card-top">
-                  <span className="num">{num}</span>
+                <div className="service-image-overlay" />
+              </div>
 
-                  <div className="service-icon-wrap">
-                    <Icon
-                      className="ico"
-                      size={26}
-                      strokeWidth={1.5}
-                      aria-hidden="true"
-                    />
-                  </div>
+              <div className="service-content">
+                <div className="service-top">
+                  <Icon className="ico" aria-hidden="true" />
+                  <span className="service-number">{num}</span>
                 </div>
 
-                <div className="service-card-body">
-                  <span className="service-tag">{tag}</span>
+                <h3>{title}</h3>
 
-                  <h3>{title}</h3>
-
-                  <p>{body}</p>
-                </div>
-
-                <a className="more" href={href}>
-                  <span>Explore capability</span>
-                  <ArrowUpRight size={16} />
-                </a>
+                <p>{body}</p>
               </div>
             </article>
           ))}
