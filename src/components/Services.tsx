@@ -3,43 +3,51 @@ import { useState } from 'react';
 const services = [
   {
     num: '01',
-    title: 'Marine Acoustic Technologies',
+    title: 'Underwater & Marine Acoustic Technologies',
     body:
-      'Marine acoustic technologies, underwater sensing, acoustic surveillance, detection, tracking, classification, and related underwater acoustic systems.',
+      'Technologies for underwater sensing, acoustic measurement, detection, monitoring, and marine applications.',
     image: '/images/marine-acoustic-technologies.png',
     label: 'MARINE ACOUSTICS',
   },
   {
     num: '02',
-    title: 'Embedded Systems Design and Development',
+    title: 'Embedded & Real-Time Systems',
     body:
-      'Embedded systems design and development for specialized sensing, processing, control, instrumentation, and technology applications.',
+      'Design and development of specialized embedded hardware, firmware, electronics, real-time systems, and system integration.',
     image: '/images/embedded-systems.png',
-    label: 'EMBEDDED SYSTEMS',
+    label: 'EMBEDDED • REAL-TIME',
   },
   {
     num: '03',
-    title: 'RADAR and SONAR Algorithm Design and Development',
+    title: 'Signal Processing & Intelligent Sensing Algorithms',
     body:
-      'Design and development of RADAR and SONAR algorithms for signal processing, detection, tracking, classification, analysis, and advanced sensing applications.',
+      'Development of algorithms for RADAR, SONAR, and other sensing systems, including signal processing, detection, tracking, classification, and data interpretation.',
     image: '/images/radar-sonar-algorithms.png',
-    label: 'RADAR / SONAR',
+    label: 'SIGNAL PROCESSING',
   },
   {
     num: '04',
-    title: 'AI Powered Defence Technology Consultancy Services',
+    title: 'AI for Defence & Security',
     body:
-      'AI-powered defence technology consultancy services supporting advanced sensing, intelligent systems, data-driven solutions, research, and technology development.',
+      'AI-driven technologies and technical solutions for intelligent sensing, data analysis, automation, decision support, and advanced defence and security applications.',
     image: '/images/ai-defence-consultancy.png',
-    label: 'AI • DEFENCE TECHNOLOGY',
+    label: 'AI • DEFENCE • SECURITY',
   },
   {
     num: '05',
-    title: 'Professional Training and Capacity Building',
+    title: 'Professional Training & Technical Capacity Building',
     body:
-      'Professional training and capacity-building programs designed to develop specialized technical knowledge, practical skills, and expertise in advanced technology domains.',
+      'Specialized training and knowledge-transfer programs in marine technology, acoustics, signal processing, embedded systems, AI, and related technical disciplines.',
     image: '/images/professional-training.png',
     label: 'TRAINING • CAPACITY BUILDING',
+  },
+  {
+    num: '06',
+    title: 'Applied Research & Engineering Solutions',
+    body:
+      'Research, experimental studies, modelling, testing, field investigations, technical analysis, and specialized engineering solutions for complex marine, environmental, underwater, and infrastructure challenges.',
+    image: '/images/applied-research-engineering.png',
+    label: 'RESEARCH • ENGINEERING',
   },
 ];
 
@@ -55,12 +63,10 @@ function ServiceImage({
   const [src, setSrc] = useState(image);
 
   const handleError = () => {
-    // The fifth image has previously had a filename/extension mismatch.
-    // Try the common alternatives automatically.
     if (src.endsWith('professional-training.png')) {
-      setSrc('/images/professional-training.jpg.png');
-    } else if (src.endsWith('professional-training.jpg.png')) {
       setSrc('/images/professional-training.jpg');
+    } else if (src.endsWith('professional-training.jpg')) {
+      setSrc('/images/professional-training.jpg.png');
     }
   };
 
@@ -77,7 +83,7 @@ function ServiceImage({
 
       <div className="varunodhya-service-image-top">
         <span>VARUNODHYA</span>
-        <span>{String(label)}</span>
+        <span>{label}</span>
       </div>
 
       <div className="varunodhya-service-image-label">
@@ -93,8 +99,6 @@ export default function Services() {
       <style>{`
         /* =====================================================
            VARUNODHYA — WHAT WE DO
-           This styling is isolated to the services section.
-           It does NOT modify the homepage / hero.
            ===================================================== */
 
         .varunodhya-services {
@@ -125,7 +129,7 @@ export default function Services() {
         }
 
         .varunodhya-services-heading {
-          max-width: 780px;
+          max-width: 820px;
           margin: 0 0 60px;
           color: #edf7fa;
           font-family: Fraunces, Georgia, serif;
@@ -175,7 +179,8 @@ export default function Services() {
           height: 100%;
           object-fit: cover;
           object-position: center;
-          transition: transform 0.8s cubic-bezier(.2,.7,.2,1);
+          transition:
+            transform 0.8s cubic-bezier(.2,.7,.2,1);
         }
 
         .varunodhya-service-image-overlay {
@@ -243,7 +248,7 @@ export default function Services() {
           margin: 0 0 16px;
           color: #edf7fa;
           font-family: Fraunces, Georgia, serif;
-          font-size: clamp(1.45rem, 2vw, 2rem);
+          font-size: clamp(1.4rem, 2vw, 1.95rem);
           font-weight: 400;
           line-height: 1.08;
           letter-spacing: -0.025em;
@@ -257,30 +262,38 @@ export default function Services() {
           line-height: 1.75;
         }
 
-        /* Fifth card occupies the full width below the first four */
-        .varunodhya-service-card:nth-child(5) {
+        /* =====================================================
+           SERVICE 06
+           Full-width research & engineering card
+           ===================================================== */
+
+        .varunodhya-service-card:nth-child(6) {
           grid-column: 1 / -1;
           display: grid;
           grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
         }
 
-        .varunodhya-service-card:nth-child(5)
+        .varunodhya-service-card:nth-child(6)
         .varunodhya-service-image-wrap {
           height: 100%;
           min-height: 330px;
         }
 
-        .varunodhya-service-card:nth-child(5)
+        .varunodhya-service-card:nth-child(6)
         .varunodhya-service-content {
           justify-content: center;
         }
+
+        /* =====================================================
+           RESPONSIVE
+           ===================================================== */
 
         @media (max-width: 1000px) {
           .varunodhya-service-grid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
           }
 
-          .varunodhya-service-card:nth-child(5) {
+          .varunodhya-service-card:nth-child(6) {
             grid-column: 1 / -1;
           }
         }
@@ -302,12 +315,12 @@ export default function Services() {
             grid-template-columns: 1fr;
           }
 
-          .varunodhya-service-card:nth-child(5) {
+          .varunodhya-service-card:nth-child(6) {
             grid-column: auto;
             display: flex;
           }
 
-          .varunodhya-service-card:nth-child(5)
+          .varunodhya-service-card:nth-child(6)
           .varunodhya-service-image-wrap {
             min-height: 0;
             height: 275px;
@@ -335,11 +348,13 @@ export default function Services() {
           </h2>
 
           <div className="varunodhya-service-grid">
+
             {services.map((service) => (
               <article
                 className="varunodhya-service-card"
                 key={service.num}
               >
+
                 <ServiceImage
                   image={service.image}
                   label={service.label}
@@ -361,10 +376,11 @@ export default function Services() {
                   </p>
 
                 </div>
+
               </article>
             ))}
-          </div>
 
+          </div>
         </div>
       </section>
     </>
