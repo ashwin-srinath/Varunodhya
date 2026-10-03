@@ -14,9 +14,9 @@ export const company = {
     'Specialized consultancy, technical expertise, professional training, and interdisciplinary solutions for a complex and evolving world.',
   description:
     'A multidisciplinary consultancy supporting complex scientific, engineering, environmental, and defence-related projects.',
-  email: 'csvaruna@gmail.com',
+  email: 'varunodhya@gmail.com',
   phone: '+91 88489 92917',
-  address: 'A5, Samyuktha Residency, Thrikkakara P.O., Kochi, Kerala – 682021, India',
+  address: 'Thrikkakara P.O., Kochi, Kerala – 682021, India',
 };
 
 export const navItems = [
