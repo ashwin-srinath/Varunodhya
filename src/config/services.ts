@@ -13,9 +13,9 @@ export interface Service {
 export const services: Service[] = [
   {
     num: '01',
-    title: 'Underwater & Marine Acoustic Technologies',
+    title: 'Aerial & Marine Technologies',
     description:
-      'Technologies for underwater sensing, acoustic measurement, detection, monitoring, and marine applications.',
+      'Advanced technologies for aerial and marine sensing, acoustic measurement, detection, monitoring, and specialized applications.',
     image: '/images/services/marine-acoustic-technologies.jpg',
     href: '#expertise',
   },
